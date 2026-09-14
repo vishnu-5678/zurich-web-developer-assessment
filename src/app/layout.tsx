@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { SessionProvider } from 'next-auth/react';
 import { StoreProvider } from '@/lib/store/provider';
 import './globals.css';
+import './page.css';
 
 export const metadata: Metadata = {
   title: 'Zurich Customer Portal',
