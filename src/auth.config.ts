@@ -5,4 +5,4 @@ export const authConfig = {
     signIn: '/login',
     error: '/login',
   },
-} satisfies NextAuthConfig;
+} satisfies Omit<NextAuthConfig, 'providers'>;
