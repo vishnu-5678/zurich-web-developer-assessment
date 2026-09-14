@@ -1,1 +1,33 @@
-{"name":"zurich-web-developer-assessment","version":"1.0.0","private":true,"scripts":{"dev":"next dev","build":"next build","start":"next start","lint":"next lint","test":"jest --runInBand","test:watch":"jest --watch"},"dependencies":{"@reduxjs/toolkit":"latest","next":"latest","next-auth":"latest","react":"latest","react-dom":"latest","react-redux":"latest"},"devDependencies":{"@testing-library/jest-dom":"latest","@testing-library/react":"latest","@testing-library/user-event":"latest","@types/jest":"latest","@types/node":"latest","@types/react":"latest","@types/react-dom":"latest","jest":"latest","jest-environment-jsdom":"latest","typescript":"latest"}}
+{
+  "name": "zurich-web-developer-assessment",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "latest",
+    "next": "latest",
+    "next-auth": "5.0.0-beta.32",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-redux": "latest"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "jest": "latest",
+    "jest-environment-jsdom": "latest",
+    "typescript": "latest"
+  }
+}
