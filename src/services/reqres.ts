@@ -12,8 +12,11 @@ type ReqResResponse = {
 };
 
 async function fetchPage(page: number): Promise<ReqResResponse> {
+  const headers: HeadersInit = { Accept: 'application/json' };
+  if (apiKey) headers['x-api-key'] = apiKey;
+
   const response = await fetch(`${baseUrl}/api/users?page=${page}`, {
-    headers: apiKey ? { 'x-api-key': apiKey } : undefined,
+    headers,
     cache: 'no-store',
   });
 
@@ -23,8 +26,11 @@ async function fetchPage(page: number): Promise<ReqResResponse> {
 
 export async function fetchAllUsers(): Promise<User[]> {
   const firstPage = await fetchPage(1);
-  const pages = await Promise.all(
-    Array.from({ length: Math.max(0, firstPage.total_pages - 1) }, (_, index) => fetchPage(index + 2)),
+  const remainingPages = Array.from(
+    { length: Math.max(0, firstPage.total_pages - 1) },
+    (_, index) => index + 2,
   );
+
+  const pages = await Promise.all(remainingPages.map(fetchPage));
   return [firstPage, ...pages].flatMap((page) => page.data);
 }
